@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/normalize.css" />
-    <link rel="stylesheet" href="/public/css/styles.css" />
-    <title>Privacy</title>
-  </head>
-  <body>
-    <header>
+<header>
       <nav class="nav">
-        <a href="/mvc/views/pages/viewimage.html"
-          ><img src="/public/assets/img/logo.png" class="logo-main" alt=""
+        <a href="viewimages.html"
+          ><img src="public/assets/img/logo.png" class="logo-main" alt=""
         /></a>
-        <div class="input-group">
+        <!-- <div class="input-group">
           <input type="text" class="input" placeholder="Search" />
           <button class="btn">Search</button>
-        </div>
+        </div> -->
         <div class="icon-group">
-          <div class="icon"><img src="/public/assets/img/search.png" alt="" /></div>
+          <!-- <div class="icon">
+            <img src="public/assets/img/search.png" class="search" alt="" />
+          </div> -->
           <div class="profile-pic">
-            <img src="/public/assets/img/oranges.jpg" alt="" />
+            <img src="public/assets/img/oranges.jpg" alt="" />
           </div>
         </div>
       </nav>
@@ -283,26 +274,4 @@
           efforts to promptly remove such information from our records.
         </p>
       </div>
-      <div id="cookies">
-        <div class="container">
-          <div class="cookies">
-            <p>This website uses cookies.</p>
-            <a href="">Check out</a>
-            <button id="cookies-btn">Agree</button>
-          </div>
-        </div>
-      </div>
-      <script src="/public/js/cookies.js"></script>
-    </main>
-    <footer>
-      <div class="fter">
-        <ul class="list list--inline">
-          <li class="list__item"><a href="about.html">About</a></li>
-          <li class="list__item"><a href="copyright.html">Copyright</a></li>
-          <li class="list__item"><a href="privacy.html">Privacy</a></li>
-          <li class="list__item"><a href="help.html">Help</a></li>
-        </ul>
-      </div>
-    </footer>
-  </body>
-</html>
+      

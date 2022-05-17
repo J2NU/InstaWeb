@@ -90,16 +90,9 @@ require_once './mvc/controllers/User.php';
                     $NameImage = $AvafullpathArr[count($AvafullpathArr)-1]; //ex: 1.jpg
                     $NameImageArr =  explode(".",$NameImage);
                     $imageorder = $NameImageArr[0];
-                    $i = $i+1;
-                    $max = $imageorder;
-                    if($i != $imageorder){
-                        $OrderNewImg = $i;
-                        break;
-                    }                    
+                    $OrderNewImg = $imageorder;      
                 } 
-                if($OrderNewImg == 0){
-                    $OrderNewImg= $max+1;//Trường hợp ảnh theo đúng thứ tự và order của ảnh mới sẽ bằng max các ảnh cũ + 1
-                }
+                $OrderNewImg = $OrderNewImg+1;
 
                 //process image upload
                 // file upload.php xử lý upload file

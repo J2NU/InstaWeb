@@ -11,7 +11,7 @@
   <body>
     <header>
       <nav class="nav">
-        <a href="/mvc/views/pages/viewimage.html"
+        <a href="Home/"
           ><img src="public/assets/img/logo.png" class="logo-main" alt=""
         /></a>
       </nav>
@@ -49,7 +49,7 @@
 } ?>
 
     
-      <div class="container register--wrapper" >
+      <div class="container register--wrapper content-center" >
         <form class="register--form" action="./Login/Register" method="post" enctype="multipart/form-data">
           <h1>Register</h1>
           <p></p>
@@ -86,15 +86,15 @@
 
           <div id="message">
             <h3>Password must contain the following:</h3>
-            <p id="letter" class="invalid">A lowercase letter</p>
-            <p id="capital" class="invalid">A capital (uppercase) letter</p>
-            <p id="number" class="invalid">A number</p>
-            <p id="length" class="invalid">
+            <p id="letter" class="password_invalid password_show">A lowercase letter</p>
+            <p id="capital" class="password_invalid password_show">A capital (uppercase) letter</p>
+            <p id="number" class="password_invalid password_show">A number</p>
+            <p id="length" class="password_invalid password_show">
               Minimum 8 characters, maximum 20 characters
             </p>
           </div>
 
-          <!-- <div class="input-register">
+          <div class="input-register">
             <label>
               Retype Password<br />
               <input
@@ -107,7 +107,7 @@
               />
             </label>
           </div>
-          <span id="wrong_pass_alert"></span> -->
+          <span id="wrong_pass_alert"></span>
 
           <div class="input-register">
             <label for="img">Select Profile Image</label><br />

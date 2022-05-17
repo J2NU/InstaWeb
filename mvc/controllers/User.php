@@ -3,11 +3,11 @@ class User extends Controller {
 
     public $PostModel;
     public $MemberModel;
-    public function __construct(){
+    public function __construct(){ //construct a function for functions
         $this->MemberModel = $this->model("MemberModel");
         $this->PostModel = $this->model("PostModel");
     } 
-    function SayHi(){
+    function SayHi(){ //create default function 
         $id = $_COOKIE["UserId"];
 
         $loginaccount=$this->MemberModel->GetSpeMem($id);
@@ -175,25 +175,16 @@ class User extends Controller {
         //Thì chèn ảnh mới vào chổ trống đó để tiết kiệm chứ ko lấy số lớn nhất + 1.
         //Thuật toán trình bày như sau:
         $allpost = $this->PostModel->allPostASC(); 
-        $i = 0;
-        $OrderNewImg =$i;
-        $max = 1;
+        $OrderNewImg = 0;
         while($row = mysqli_fetch_array($allpost)){
             $ImgfullpathArr = explode("/",$row["Post_Img"]); //ex: public/img/post/1.jpg as an array type
             $NameImage = $ImgfullpathArr[count($ImgfullpathArr)-1]; //ex: 1.jpg
             $NameImageArr =  explode(".",$NameImage);
             $imageorder = $NameImageArr[0];
-            $i = $i+1;
-            $max = $imageorder;
-            if($i != $imageorder){
-                $OrderNewImg = $i;
-                break;
-            }                    
+            $OrderNewImg = $imageorder;      
         } 
-        if($OrderNewImg == 0){
-            $OrderNewImg= $max+1;//Trường hợp ảnh theo đúng thứ tự và order của ảnh mới sẽ bằng max các ảnh cũ + 1
-        }
-
+        $OrderNewImg = $OrderNewImg+1;
+       
         //process image upload
         // file upload.php xử lý upload file
         /////////////////////////////////////////
@@ -257,7 +248,7 @@ class User extends Controller {
             // Bạn có thể phát triển code để lưu thành một tên file khác
             if (file_exists($target_file))
             {
-                echo "Tên file đã tồn tại trên server, không được ghi đè";
+                echo "\nTên file đã tồn tại trên server, không được ghi đè";
                 $allowUpload = false;
             }
             // Kiểm tra kích thước file upload cho vượt quá giới hạn cho phép

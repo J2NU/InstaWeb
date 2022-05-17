@@ -9,7 +9,7 @@ class MemberModel extends DB{
     }
     public function GetAllMemberACS()
     {
-        $sql = "SELECT * FROM account ORDER BY REG_TIME ASC";
+        $sql = "SELECT * FROM account ORDER BY id ASC";
         return mysqli_query($this->con, $sql);
         
     }

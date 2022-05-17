@@ -11,13 +11,13 @@
   <body>
     <header>
       <nav class="nav">
-        <a href="/mvc/views/pages/viewimage.html"
-          ><img src="./public/assets/img/logo.png" class="logo-main" alt=""
+        <a href="Home/"
+          ><img src="public/assets/img/logo.png" class="logo-main" alt=""
         /></a>
       </nav>
     </header>
     <main>
-<!--  sai password -->
+<!--  wrong password -->
 <?php
 if (isset($data['result'])) {
     // var_dump($data['result']);
@@ -32,7 +32,7 @@ if (isset($data['result'])) {
 <?php } ?>
 </p>
 </p>
-      <div class="container register--wrapper">
+      <div class="container register--wrapper content-center">
         <form action="./Login/" method="post">
           <h1>Sign in</h1>
           <div class="input-register">

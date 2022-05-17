@@ -3,11 +3,11 @@ class Admin extends Controller{
 
     public $MemberModel;
     public $PostModel;
-    public function __construct(){
+    public function __construct(){ //construct a function for functions
         $this->MemberModel = $this->model("MemberModel");
         $this->PostModel = $this->model("PostModel");
     }
-    public function SayHi(){
+    public function SayHi(){ // create default function for controller.
         $mem = $this->MemberModel->GetAllMember();
         $this->view("masterAdmin", [
             "page"=>"managemem",

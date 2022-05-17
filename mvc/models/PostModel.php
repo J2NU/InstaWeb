@@ -5,7 +5,7 @@ class PostModel extends DB{
             return mysqli_query($this->con, $qr);
     }
     public function allPostASC(){
-        $qr = "SELECT * FROM post, account where Acc_post = id order by Post_time ASC";
+        $qr = "SELECT * FROM post, account where Acc_post = id order by Pid ASC";
             return mysqli_query($this->con, $qr);
     }
     public function PublicPost(){

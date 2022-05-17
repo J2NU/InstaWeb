@@ -36,13 +36,13 @@
         for ($x = 0; $x < $c; $x++) {
           echo('<section class="image-content content_center">');
           echo('<div class="image-content-top">');
-          echo('<div class="profile-pic">');
+          echo('<div class="profile-pic full-image">');
         
           echo('<img src="'.$arrAvaOwner[$x].'" alt="" />');
           echo('</div>');
           echo('<p>'.$arrNameOwner[$x].'</p>');
           echo('</div>');
-          echo('<div class="image-content-main">');
+          echo('<div class="image-content-main full-image">');
           echo('<img src="'.$arrPostLink[$x].'" alt="" />');
           echo('</div>');
           echo('<div class="image-content-desc">');

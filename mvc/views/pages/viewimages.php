@@ -21,70 +21,38 @@
     <main>
     <section class="image-share content_center">
         <div class="image-share-wrapper">
-          <div class="profile-pic"><img src="public/assets/img/oranges.jpg"></div>
+          <div class="profile-pic full-image"><img src="public/assets/img/oranges.jpg"></div>
           <div class="image-share-button"><button class="btn" onclick="openForm()">Share image</button></div>
         </div>
         </div>
       </section>
       <!--Popup for uploading image-->
       <div class="form-popup content_center" id="myForm">
-        <form class="form-container">
-          <div class="grid grid--1x2">
-            <div class="form--div">
-              <h2>Image</h2>
-              <div class="drag-image">
-                <h3>Drag & Drop File Here</h3>
-                <h3>OR</h3>
-                <button hidden>Browse File</button>
-                <input type="file" />
-              </div>
-            </div>
-            <div class="form--div">
-              <div class="form--info">
-                <div class="form--topbar">
-                  <h2>Description</h2>
-                  <button
-                    type="button"
-                    class="btn cancel"
-                    onclick="closeForm()"
-                  >
-                    Close
-                  </button>
-                </div>
-                <textarea
-                  name="description"
-                  id="description"
-                  class="form__description"
-                  cols="30"
-                  rows="3"
-                ></textarea>
-                <h2>Share Level</h2>
-                <div>
-                  <input type="radio" name="level" id="public" />
-                  <label for="public">Public</label>
-                </div>
-                <div>
-                  <input type="radio" name="level" id="internal" />
-                  <label for="internal">Internal</label>
-                </div>
-                <div>
-                  <input type="radio" name="level" id="private" />
-                  <label for="private">Private</label>
-                </div>
-              </div>
-              <div class="form__button">
-                <input
-                  class="reset form__btn"
-                  type="button"
-                  onclick="remove_img()"
-                  value="Clear Image"
-                />
-                <button type="submit" class="btn form__btn">Upload</button>
-              </div>
-            </div>
+      <form class="form-container" action="./User/ShareImage" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileupload" id="fileupload">
+          <textarea
+          name="description"
+          id="description"
+          class="form__description"
+          cols="30"
+          rows="3"></textarea>
+          <div>
+            <input type="radio" name="level" id="public" value=0 />
+            <label for="public">Public</label>
           </div>
-        </form>
+          <div>
+            <input type="radio" name="level" id="internal" value=1 />
+            <label for="internal">Internal</label>
+          </div>
+          <div>
+            <input type="radio" name="level" id="private" value=2 />
+            <label for="private">Private</label>
+          </div>
+        <input type="submit" class="btn form__btn" value="Upload" name="Submit" />
+      </form>
       </div>
+    
+
       <!--Photo zone-->
       <?php
         //hứng kết quả truyền qua từ Musicmodel từ Home.php
@@ -105,7 +73,7 @@
         for ($x = 0; $x < $c; $x++) {
           echo('<section class="image-content content_center">');
           echo('<div class="image-content-top">');
-          echo('<div class="profile-pic">');
+          echo('<div class="profile-pic full-image">');
         
           echo('<img src="'.$arrAvaOwner[$x].'" alt="" />');
           echo('</div>');

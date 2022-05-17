@@ -13,7 +13,7 @@ class Route{
         $handleUrl = $url;
         if(!empty($routes)){
             foreach($routes as $key=>$value){
-                //so sánh url gốc với $routes
+                //Compare origin url with $routes
                 if(preg_match('~'.$key.'~is', $url)){
                     $handleUrl = preg_replace('~'.$key.'~is', $value, $url);
                 }
